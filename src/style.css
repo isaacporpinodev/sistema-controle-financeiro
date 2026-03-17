@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Fontes */
+  --primary-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Cores */
+  --primary-bg: #ffffff;
+  --secondary-bg: #f4efe6;
+  --panel-bg: #fffaf2;
+  --primary-text: #1f1a17;
+  --secondary-text: #6a5f57;
+  --border-color: #ded2c4;
+  --accent-color: #186135;
+  --accent-soft: #dff3e7;
+  --accent-hover: #334d3c;
+  --danger-color: #9f1239;
+  --danger-soft: #fde2e8;
+  --danger-hover: #522330;
+
+  /* Sombras */
+  --card-shadow: 0 18px 40px rgba(68, 52, 38, 0.12);
+  --app-shadow: 0 24px 50px rgba(68, 52, 38, 0.08);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 24px;
+  background-color: var(--secondary-bg);
+  color: var(--primary-text);
+  font-family: var(--primary-font);
+  line-height: 1.5;
+}
+
+.app {
+  width: 100%;
+  max-width: 900px;
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--primary-bg);
+  box-shadow: var(--app-shadow);
+}
+
+.app-header {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.app-title {
+  margin-bottom: 10px;
+  color: var(--primary-text);
+  font-size: 2.5rem;
+}
+
+.app-description {
+  margin-top: 15px;
+  color: var(--secondary-text);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.balance-section,
+.form-section,
+.transactions-section {
+  margin: 25px 0;
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--panel-bg);
+  box-shadow: var(--card-shadow);
+}
+
+.form-section,
+.transactions-section {
+  line-height: 1.6;
+}
+
+.transactions-section {
+  overflow-x: auto;
+}
+
+.balance-label {
+  margin-bottom: 10px;
+  color: var(--secondary-text);
+  font-size: 1rem;
+}
+
+.balance-value {
+  margin-bottom: 12px;
+  color: var(--accent-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.form-section h2,
+.transactions-section h2 {
+  margin-bottom: 8px;
+  color: var(--primary-text);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 25px 0;
+}
+
+.form-label {
+  color: var(--secondary-text);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.form-button,
+.edit-button,
+.delete-button {
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--accent-color);
+  color: var(--primary-bg);
+  font-weight: 600;
+}
+
+.form-button:hover {
+  background-color: rgb(1, 126, 1);
+}
+
+.edit-button,
+.delete-button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--primary-bg);
+  font-weight: 500;
+}
+
+.edit-button {
+  background-color: var(--accent-color);
+}
+
+.edit-button:hover {
+  background-color: var(--accent-hover);
+}
+
+.delete-button {
+  background-color: var(--danger-color);
+}
+
+.delete-button:hover {
+  background-color: var(--danger-hover);
+}
+
+.form-button:active,
+.edit-button:active,
+.delete-button:active {
+  transform: translateY(1px);
+}
+
+.transactions-table {
+  width: 100%;
+  min-width: 620px;
+  margin-top: 25px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.transactions-table th {
+  color: var(--secondary-text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.transactions-table td {
+  vertical-align: middle;
+}
+
+.transactions-table th:nth-child(2),
+.transactions-table td:nth-child(2) {
+  width: 180px;
+  padding-right: 12px;
+  padding-left: 12px;
+  text-align: center;
+}
+
+.transactions-table th:nth-child(3) {
+  width: 220px;
+}
+
+.transactions-table tr:hover {
+  background-color: var(--accent-soft);
+}
+
+.actions-cell {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.transaction-value {
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.valor-positivo {
+  color: var(--accent-color);
+}
+
+.valor-negativo {
+  color: var(--danger-color);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 16px;
+  }
+
+  .app,
+  .balance-section,
+  .form-section,
+  .transactions-section {
+    padding: 18px;
+  }
+
+  .app-title,
+  .balance-value {
+    font-size: 2rem;
+  }
+
+  .app-description {
+    font-size: 1rem;
+  }
+
+  .actions-cell {
+    gap: 8px;
+  }
+
+  .edit-button,
+  .delete-button {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .app {
+    padding: 14px;
+  }
+
+  .app-title {
+    font-size: 1.75rem;
+  }
+
+  .balance-value {
+    font-size: 1.7rem;
+  }
+
+  .form-group {
+    margin: 18px 0;
+  }
+
+  .actions-cell {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .edit-button,
+  .delete-button {
+    width: 100%;
+  }
+}

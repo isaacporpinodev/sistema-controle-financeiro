@@ -1,0 +1,10 @@
+{
+  "transactions": [
+    {
+      "id": "626d",
+      "nome": "salario",
+      "valor": 2222
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
